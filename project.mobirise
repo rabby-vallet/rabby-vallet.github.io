@@ -1,0 +1,172 @@
+{
+  "settings": {
+    "name": "rabby wallet 2",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "titlePreset": "StartM5",
+      "styling": {
+        "primaryColor": "#9fe870",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffea64",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2.5,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": 1.2,
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      }
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.9.0",
+    "siteFonts": [
+      {
+        "css": "'Inter Tight', sans-serif",
+        "name": "Inter Tight",
+        "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
+      }
+    ],
+    "favicon": "@PROJECT_PATH@/assets/images/rabby.png",
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\nSitemap: https://rabby-vallet.github.io/sitemap.xml\n\n",
+    "sitemapSwitcher": true,
+    "siteUrl": "https://rabby-vallet.github.io/",
+    "sitemapSwitcherAuto": "on",
+    "mbrsiteDomain": "boizvxwitq",
+    "imageResize": false,
+    "usedWebp": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "uniqCompNum": 2,
+    "versionPublish": "5.9.0",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Rabby Wallet™ | Home Official Site",
+        "meta_descr": "Rabby Wallet is an open source crypto wallet in your browser for Ethereum. 1. Designed for DeFi users with a smooth multi-chain experience. 2.",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".row": {
+              "flex-direction": "row-reverse"
+            }
+          },
+          "_name": "image01",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <div class=\"image-wrapper mb-4\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/rabby.jpg\" alt=\"rabby wallet\">\n        </div>\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\"><b>Rabby Wallet™ | Home Official Site</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          Unleash your creativity and sew your way to endless possibilities.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1IpX0wLCu",
+          "_anchor": "image01-0",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
+              }
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
+            },
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
+            }
+          },
+          "_name": "article07",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article07\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\"><b>Rabby Wallet: Embracing the Future of Secure and User-Friendly Crypto Storage</b></h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Introduction</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">In the rapidly expanding world of cryptocurrencies, the importance of secure and user-friendly wallets cannot be overstated. Enter <a href=\"https://rabby-vallet.github.io/\" class=\"text-primary\">Rabby Wallet</a>, a revolutionary solution designed to meet the evolving needs of crypto enthusiasts. With its advanced security features, intuitive interface, and extensive compatibility, <a href=\"https://rabby.io/\" class=\"text-primary\">Rabby Wallet</a> offers users a seamless and reliable platform for managing their digital assets. In this article, we will delve into the unique features, benefits, and potential impact of Rabby Wallet in shaping the future of crypto storage.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Understanding Rabby Wallet</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Rabby Wallet is a state-of-the-art cryptocurrency wallet that provides users with a secure and user-friendly environment for managing their digital assets. It supports a wide range of cryptocurrencies, including Bitcoin (BTC), Ethereum (ETH), and various ERC-20 tokens. Rabby Wallet combines robust security measures with an intuitive interface, making it accessible to both experienced crypto enthusiasts and newcomers to the space.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Unparalleled Security Features</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Rabby Wallet prioritizes the security of users' digital assets by implementing a comprehensive set of security features:<br><br>a. Hierarchical Deterministic (HD) Wallet: Rabby Wallet employs HD wallet technology, enabling users to generate a unique seed phrase during the wallet creation process. This seed phrase serves as a backup and can be used to recover the wallet and access the funds in case of loss or theft.<br>\n<br>\nb. Multi-Factor Authentication (MFA): To add an extra layer of security, Rabby Wallet supports multi-factor authentication, requiring users to authenticate their identity using multiple verification methods such as biometrics, PIN codes, or hardware keys.<br><br>c. Secure Element Integration: Rabby Wallet integrates secure elements, such as Trusted Execution Environments (TEEs) and Secure Enclave Processors (SEPs), to safeguard private keys and protect against hardware and software attacks.\n<br>\n<br>d. Cold Storage Support: Rabby Wallet enables users to store a portion of their digital assets in cold storage, keeping them offline and away from potential cyber threats. This feature provides an added layer of protection against hacking and unauthorized access.\n<br>\n<br>e. Decentralization: Rabby Wallet operates in a decentralized manner, meaning users retain full control over their private keys and funds. This eliminates the risk of third-party custodianship and reduces the vulnerability associated with centralized platforms.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Intuitive User Interface and Enhanced User Experience</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Rabby Wallet distinguishes itself by offering a user-friendly interface and an enhanced user experience:<br><br>a. Simple and Intuitive Design: The wallet interface is designed to be user-friendly, with a clean and intuitive layout that simplifies the management of various cryptocurrencies. Users can easily navigate the wallet's features and functionalities, making it accessible to crypto enthusiasts of all experience levels.\n<br>\n<br>b. Seamless Integration: Rabby Wallet seamlessly integrates with popular cryptocurrency exchanges, allowing users to execute trades and monitor their portfolio within the wallet interface. This integration streamlines the trading process and provides users with a holistic view of their digital assets.\n<br>\n<br>c. Real-Time Market Data: Rabby Wallet provides users with real-time market data, including price charts, historical data, and portfolio performance metrics. This information empowers users to make informed decisions and stay updated on the latest market trends.\n<br>\n<br>d. Multi-Language Support: Recognizing the global nature of the cryptocurrency market, Rabby Wallet offers multi-language support, catering to users from diverse linguistic backgrounds. This inclusivity enhances the accessibility and usability of the wallet for a wider user base.&nbsp;<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Comprehensive Compatibility and Future Developments</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Rabby Wallet supports a wide range of cryptocurrencies and is continually expanding its compatibility:<br><br>a. Multi-Currency Support: Rabby Wallet is compatible with numerous cryptocurrencies, including Bitcoin, Ethereum, Ripple, Litecoin, and various ERC-20 tokens. This comprehensive compatibility ensures that users can store and manage their preferred digital assets within a single wallet.\n<br>\n<br>b. Cross-Platform Accessibility: Rabby Wallet is available on multiple platforms, including desktop, web, and mobile devices (iOS and Android). This cross-platform accessibility enables users to access their wallets and manage their crypto assets seamlessly, regardless of their preferred device.\n<br>\n<br>c. Integration with DeFi Platforms: Recognizing the growing popularity of decentralized finance (DeFi), Rabby Wallet is actively integrating with DeFi platforms to provide users with easy access to decentralized lending, borrowing, and liquidity protocols. This integration further expands the utility and functionality of the wallet.\n<br>\n<br>d. Ongoing Development: Rabby Wallet is committed to continuous improvement and regularly releases updates and new features. This dedication to development ensures that users benefit from the latest advancements in security, usability, and compatibility.&nbsp;<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>The Impact of Rabby Wallet on Crypto Storage</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Rabby Wallet's emergence has significant implications for the future of crypto storage and the wider adoption of cryptocurrencies:<br><br>a. Enhanced Security and Trust: By prioritizing security and offering advanced features, Rabby Wallet instills trust in users, encouraging broader adoption of cryptocurrencies. Its robust security measures mitigate the risks associatedwith storing digital assets, addressing concerns surrounding hacking, theft, and unauthorized access.\n<br>\n<br>b. User-Friendly Onboarding: Rabby Wallet's intuitive interface and user-friendly design make it easier for newcomers to enter the crypto space. The simplified user experience removes barriers to entry, empowering individuals to manage their digital assets with confidence.\n<br>\n<br>c. Simplified Portfolio Management: With Rabby Wallet's comprehensive compatibility and real-time market data, users can efficiently manage their diverse cryptocurrency portfolios from a single platform. This streamlines the process of tracking investments, making informed decisions, and maximizing portfolio performance.\n<br>\n<br>d. Promotion of Decentralization: By enabling users to retain control over their private keys and funds, Rabby Wallet contributes to the decentralization of the crypto ecosystem. This aligns with the core principles of cryptocurrencies and empowers individuals to be self-sovereign in managing their digital assets.\n<br>\n<br>e. Fostering Mainstream Adoption: Rabby Wallet's emphasis on security, user experience, and compatibility paves the way for wider mainstream adoption of cryptocurrencies. As more individuals and institutions recognize the importance of secure and user-friendly storage solutions, Rabby Wallet's contributions to the crypto space become increasingly significant.&nbsp;<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Conclusion</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Rabby Wallet represents a significant step forward in the evolution of crypto storage solutions. Through its robust security features, intuitive user interface, and extensive compatibility, Rabby Wallet addresses the pressing needs of crypto enthusiasts, fostering trust and ease of use. By empowering users with control over their digital assets, Rabby Wallet contributes to the decentralization of the crypto ecosystem and promotes the wider adoption of cryptocurrencies.\n<br>\n<br>As the crypto industry continues to evolve, Rabby Wallet's ongoing development and commitment to innovation ensure that users will benefit from the latest advancements in security, usability, and compatibility. With its potential to shape the future of crypto storage, Rabby Wallet stands as a beacon of security, accessibility, and user-friendly design, making it an indispensable tool for individuals seeking a reliable and seamless platform to manage their digital assets.\n<br>\n<br></p>\n              </div>\n            </div>\n          </div>\n          <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n            <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1IpY4zrGj",
+          "_anchor": "article07-1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
